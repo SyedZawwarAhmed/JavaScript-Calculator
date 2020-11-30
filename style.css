@@ -5,6 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(9, 98, 84);
 }
 
 #calculator {
