@@ -13,6 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(11, 46, 46);
+  border-radius: 8px;
+  box-shadow: 7px 7px 7px 3px rgba(11, 46, 46, 0.6);
 }
 
 #display {
