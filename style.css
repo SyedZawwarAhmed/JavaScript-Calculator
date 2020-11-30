@@ -8,7 +8,7 @@ body {
 }
 
 #calculator {
-  height: 500px;
+  height: 550px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ h2 {
 }
 
 button {
-  width: 54.38px;
+  width: 58.3px;
   font-size: x-large;
   font-weight: 600;
   color: white;
