@@ -1,0 +1,106 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#calculator {
+  border: 1px solid black;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(11, 46, 46);
+}
+
+#display {
+  height: 35%;
+  margin: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2 {
+  text-align: end;
+  font-size: 70px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 40px;
+  padding-top: 10px;
+}
+
+#keypad {
+  padding: 10px;
+  height: 65%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+button {
+  width: 54.38px;
+  font-size: x-large;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+#clear,
+#percentage,
+#add-subtract,
+#divide {
+  order: 1;
+}
+
+#seven,
+#eight,
+#nine,
+#multiply {
+  order: 2;
+}
+
+#four,
+#five,
+#six,
+#subtract {
+  order: 3;
+}
+
+#one,
+#two,
+#three,
+#add {
+  order: 4;
+}
+
+#zero,
+#decimal,
+#equals {
+  order: 5;
+}
+
+#add {
+  grid-column-start: 4;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  height: 100%;
+}
+
+.others,
+.operator,
+#equals {
+  background-color: rgb(29, 221, 221);
+}
+
+.numbers {
+  background-color: rgb(23, 77, 77);
+}
