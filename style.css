@@ -98,10 +98,12 @@ button {
 .operator,
 #equals {
   background-color: rgb(29, 221, 221);
+  transition: 0s;
 }
 
 .numbers {
   background-color: rgb(23, 77, 77);
+  transition: 0s;
 }
 
 .others:active,
