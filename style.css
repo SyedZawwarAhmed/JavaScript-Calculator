@@ -100,8 +100,7 @@ button {
 }
 
 .others,
-.operator,
-#equals {
+.operator {
   background-color: rgb(29, 221, 221);
   transition: 0s;
 }
@@ -112,11 +111,10 @@ button {
 }
 
 .others:active,
-.operator:active,
-#equals:active {
-  background-color: rgba(29, 221, 221, 0.6);
+.operator:active {
+  opacity: 0.6;
 }
 
 .numbers:active {
-  background-color: rgba(23, 77, 77, 0.5);
+  opacity: 0.5;
 }
