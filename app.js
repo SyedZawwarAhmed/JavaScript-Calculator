@@ -5,6 +5,10 @@ const eight = document.getElementById("eight");
 
 var calArr = [];
 
+const cleared = () => {
+    calculation.textContent = '0';
+}
+
 const pressed9 = () => {
     calArr.push('9');
     const calStr = calArr.join("");
@@ -57,11 +61,7 @@ const pressed0 = () => {
     const calStr = calArr.join("");
     calculation.innerText = calStr;
 }
-const pressed = () => {
-    calArr.push('');
-    const calStr = calArr.join("");
-    calculation.innerText = calStr;
-}
+
 
 
 
