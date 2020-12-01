@@ -7,6 +7,7 @@ var calArr = [];
 
 const cleared = () => {
     calculation.textContent = '0';
+    calArr = [];
 }
 
 const pressed9 = () => {
