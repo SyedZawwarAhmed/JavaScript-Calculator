@@ -5,7 +5,6 @@ let number = '';
 let numbers = [];
 let operators = [];
 let answer = 0;
-
 let fontLen = 0;
 let fonSize = 39;
 
@@ -36,11 +35,7 @@ function fontRes() {
         if (fontLen > 11) {
             fonSize -= 2;
             calculation.style.fontSize = fonSize.toString() + 'px';
-        }
-        if (fontLen > 30) {
-            fonSize -= 0.5;
-            calculation.style.fontSize = fonSize.toString() + 'px';
-        }
+        }   
     }
 }
 
@@ -165,7 +160,8 @@ const equals = () => {
             answer /= parseFloat(numbers[i + 1]);
         }
     }
-    result.innerText = answer;
+    answer = answer.toFixed(8);
+    result.innerText = parseFloat(answer);
 }
 
 console.log(numbers);
