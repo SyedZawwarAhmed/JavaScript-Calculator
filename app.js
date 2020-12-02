@@ -1,7 +1,5 @@
 const result = document.getElementById("result");
 const calculation = document.getElementById("calculation");
-const nine = document.getElementById("nine");
-const eight = document.getElementById("eight");
 
 var number = '';
 var numbers = [];
