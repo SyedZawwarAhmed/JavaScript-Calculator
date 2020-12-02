@@ -123,6 +123,12 @@ const equals = () => {
         if(operators[i] === '-') {
             answer = parseInt(numbers[i]) - parseInt(numbers[i + 1]);
         }
+        if(operators[i] === '*') {
+            answer = parseInt(numbers[i]) * parseInt(numbers[i + 1]);
+        }
+        if(operators[i] === '/') {
+            answer = parseInt(numbers[i]) / parseInt(numbers[i + 1]);
+        }
     }
     result.innerText = answer;
 }
