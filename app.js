@@ -6,11 +6,15 @@ const eight = document.getElementById("eight");
 var number = '';
 var numbers = [];
 var operators = [];
-var answer = '';
+var answer = 0;
 
 const cleared = () => {
     calculation.innerText = '0';
     number = '';
+    result.innerText = '';
+    answer = 0;
+    numbers = [];
+    operators = [];
 }
 
 function first0() {
@@ -108,6 +112,19 @@ const divide = () => {
     numbers.push(number);
     operators.push('/');
     number = '';
+}
+
+const equals = () => {
+    numbers.push(number);
+    for (let i=0; i<operators.length; i++) {
+        if(operators[i] === '+') {
+            answer = parseInt(numbers[i]) + parseInt(numbers[i + 1]);
+        }
+        if(operators[i] === '-') {
+            answer = parseInt(numbers[i]) - parseInt(numbers[i + 1]);
+        }
+    }
+    result.innerText = answer;
 }
 
 console.log(numbers);
