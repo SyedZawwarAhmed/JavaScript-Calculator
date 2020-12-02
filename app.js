@@ -1,10 +1,10 @@
 const result = document.getElementById("result");
 const calculation = document.getElementById("calculation");
 
-var number = '';
-var numbers = [];
-var operators = [];
-var answer = 0;
+let number = '';
+let numbers = [];
+let operators = [];
+let answer = 0;
 
 const cleared = () => {
     calculation.innerText = '0';
