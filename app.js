@@ -31,7 +31,7 @@ function first0() {
 
 function fontRes() {
     fontLen++;
-    if (fonSize > 17) {
+    if (fonSize > 20) {
         if (fontLen > 11) {
             fonSize -= 2;
             calculation.style.fontSize = fonSize.toString() + 'px';
