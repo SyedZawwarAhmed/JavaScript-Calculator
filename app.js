@@ -116,18 +116,19 @@ const divide = () => {
 
 const equals = () => {
     numbers.push(number);
+    answer = parseInt(numbers[0]);
     for (let i=0; i<operators.length; i++) {
-        if(operators[i] === '+') {
-            answer = parseInt(numbers[i]) + parseInt(numbers[i + 1]);
+        if(operators[i] === '+') { 
+            answer += parseInt(numbers[i + 1]);
         }
         if(operators[i] === '-') {
-            answer = parseInt(numbers[i]) - parseInt(numbers[i + 1]);
+            answer -= parseInt(numbers[i + 1]);
         }
         if(operators[i] === '*') {
-            answer = parseInt(numbers[i]) * parseInt(numbers[i + 1]);
+            answer *= parseInt(numbers[i + 1]);
         }
         if(operators[i] === '/') {
-            answer = parseInt(numbers[i]) / parseInt(numbers[i + 1]);
+            answer /= parseInt(numbers[i + 1]);
         }
     }
     result.innerText = answer;
