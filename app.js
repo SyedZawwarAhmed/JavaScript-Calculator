@@ -79,12 +79,13 @@ const pressed0 = () => {
 const pressedDec = () => {
     first0();
     let i ;
-    for (i=0; i<calculation.innerText.length; i++) {
-        if (calculation.innerText[i] === '.') {
+    for (i=0; i<number.length; i++) {
+        if (number[i] === '.') {
             break;
         }
     }
-    if (i === calculation.innerText.length) {
+    if (i === number.length) {
+        number += '.';
         calculation.innerText += '.';
     }
 }
@@ -116,19 +117,19 @@ const divide = () => {
 
 const equals = () => {
     numbers.push(number);
-    answer = parseInt(numbers[0]);
+    answer = parseFloat(numbers[0]);
     for (let i=0; i<operators.length; i++) {
         if(operators[i] === '+') { 
-            answer += parseInt(numbers[i + 1]);
+            answer += parseFloat(numbers[i + 1]);
         }
         if(operators[i] === '-') {
-            answer -= parseInt(numbers[i + 1]);
+            answer -= parseFloat(numbers[i + 1]);
         }
         if(operators[i] === '*') {
-            answer *= parseInt(numbers[i + 1]);
+            answer *= parseFloat(numbers[i + 1]);
         }
         if(operators[i] === '/') {
-            answer /= parseInt(numbers[i + 1]);
+            answer /= parseFloat(numbers[i + 1]);
         }
     }
     result.innerText = answer;
