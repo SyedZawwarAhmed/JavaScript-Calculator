@@ -151,7 +151,7 @@ const equals = () => {
     answer = parseFloat(numbers[0]);
     for (let i=0; i<operators.length; i++) {
         if(operators[i] === '+') { 
-            answer += parseFloat(numbers[i + 1]);
+                answer += parseFloat(numbers[i + 1]);
         }
         if(operators[i] === '-') {
             answer -= parseFloat(numbers[i + 1]);
@@ -163,9 +163,9 @@ const equals = () => {
             answer /= parseFloat(numbers[i + 1]);
         }
     }
-
+    
     answerStr = answer.toString();
-
+    
     if (answer > 999999999 || answer < 0.00000001) {
         result.innerText = answer.toExponential(7);
     }
@@ -178,11 +178,9 @@ const equals = () => {
             for (let i=0; i<14; i++) { 
                 result.innerText += answerStr[i];
             }
-        }
-        
+        } 
     }
        calculation.innerText = '';
-    
 }
 
 console.log(numbers);
