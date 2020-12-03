@@ -6,18 +6,21 @@ let numbers = [];
 let operators = [];
 let answer = 0;
 let fontLen = 0;
-let fonSize = 39;
+let fonSize = 35;
+let answerStr = '';
 
 const cleared = () => {
     calculation.innerText = '0';
-    calculation.style.fontSize = '39px';
+    result.style.fontSize = '35px';
+    calculation.style.fontSize = '35px';
     number = '';
     result.innerText = '';
     answer = 0;
     numbers = [];
     operators = [];
     fontLen = 0;
-    fonSize = 39;
+    fonSize = 35;
+    answerStr = '';
 }
 
 function first0() {
@@ -160,8 +163,26 @@ const equals = () => {
             answer /= parseFloat(numbers[i + 1]);
         }
     }
-    answer = answer.toFixed(8);
-    result.innerText = parseFloat(answer);
+
+    answerStr = answer.toString();
+
+    if (answer > 999999999 || answer < 0.00000001) {
+        result.innerText = answer.toExponential(7);
+    }
+    else {
+        if (answerStr.length <= 14) {
+            answer = answer.toFixed(8);
+            result.innerText = parseFloat(answer);
+        }
+        else {
+            for (let i=0; i<14; i++) { 
+                result.innerText += answerStr[i];
+            }
+        }
+        
+    }
+       calculation.innerText = '';
+    
 }
 
 console.log(numbers);

@@ -30,15 +30,18 @@ body {
 h1,
 h2 {
   text-align: end;
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 200;
   margin: 0;
+  margin-top: 20px;
+  color: rgb(136, 219, 219);
 }
 
 h2 {
-  font-size: 39px;
-  padding-top: 10px;
+  font-size: 35px;
   word-wrap: break-word;
+  color: white;
+  margin: 0;
 }
 
 #keypad {
@@ -118,4 +121,8 @@ button {
 
 .numbers:active {
   opacity: 0.5;
+}
+
+hr {
+  width: 90%;
 }
