@@ -13,6 +13,7 @@ const cleared = () => {
     calculation.innerText = '0';
     result.style.fontSize = '35px';
     calculation.style.fontSize = '35px';
+    calculation.style.display = ''
     number = '';
     result.innerText = '';
     answer = 0;
@@ -175,12 +176,13 @@ const equals = () => {
             result.innerText = parseFloat(answer);
         }
         else {
-            for (let i=0; i<14; i++) { 
+            for (let i=0; i<answerStr.length; i++) { 
                 result.innerText += answerStr[i];
             }
         } 
     }
        calculation.innerText = '';
+       calculation.style.display = 'none';
 }
 
 console.log(numbers);
