@@ -51,65 +51,42 @@ function doubleOpe() {
     } 
 }
 
-const pressed9 = () => {
+function numClick(num) {
     first0();
     fontRes();
-    calculation.innerText += '9';
-    number += '9';
+    calculation.innerText += num;
+    number += num;
+}
+
+const pressed9 = () => {
+    numClick('9');
 }
 const pressed8 = () => {
-    first0();
-    fontRes();
-    calculation.innerText += '8';
-    number += '8';
+    numClick('8');
 }
 const pressed7 = () => {
-    first0();
-    fontRes();
-    calculation.innerText += '7';
-    number += '7';
+    numClick('7');
 }
 const pressed6 = () => {
-    first0();
-    fontRes();
-    calculation.innerText += '6';
-    number += '6';
+    numClick('6');
 }
 const pressed5 = () => {
-    first0();
-    fontRes();
-    calculation.innerText += '5';
-    number += '5';
+    numClick('5');
 }
 const pressed4 = () => {
-    first0();
-    fontRes();
-    calculation.innerText += '4';
-    number += '4';
+    numClick('4');
 }
 const pressed3 = () => {
-    first0();
-    fontRes();
-    calculation.innerText += '3';
-    number += '3';
+    numClick('3');
 }
 const pressed2 = () => {
-    first0();
-    fontRes();
-    calculation.innerText += '2';
-    number += '2';
+    numClick('2');
 }
 const pressed1 = () => {
-    first0();
-    fontRes();
-    calculation.innerText += '1';
-    number += '1';
+    numClick('1');
 }
 const pressed0 = () => {
-    first0();
-    fontRes();
-    calculation.innerText += '0';
-    number += '0';
+    numClick('0');
 }
 const pressedDec = () => {
     fontRes();
