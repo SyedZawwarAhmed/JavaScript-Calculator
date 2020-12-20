@@ -8,6 +8,7 @@ let answer = 0;
 let fontLen = 0;
 let fonSize = 35;
 let answerStr = '';
+let calArr = [];
 
 const cleared = () => {
     calculation.innerText = '0';
@@ -22,6 +23,7 @@ const cleared = () => {
     fontLen = 0;
     fonSize = 35;
     answerStr = '';
+    calArr = [];
 }
 
 function first0() {
@@ -41,6 +43,12 @@ function fontRes() {
             calculation.style.fontSize = fonSize.toString() + 'px';
         }   
     }
+}
+
+function doubleOpe() {
+    if (calArr[calArr.length - 1] === '+' || calArr[calArr.length - 1] === '-' || calArr[calArr.length - 1] === '*' || calArr[calArr.length - 1] === '/') {
+        calArr.pop();
+    } 
 }
 
 const pressed9 = () => {
@@ -104,7 +112,6 @@ const pressed0 = () => {
     number += '0';
 }
 const pressedDec = () => {
-    first0();
     fontRes();
     let i ;
     for (i=0; i<number.length; i++) {
@@ -121,38 +128,64 @@ const pressedDec = () => {
 const plus = () => {
     fontRes();
     calculation.innerText += '+';
-    numbers.push(number);
-    operators.push('+');
+    if (number !== '' && number !== '-') {
+        calArr.push(number);
+    }
+    doubleOpe();
+    calArr.push('+');
     number = '';
 }
 const minus = () => {
     fontRes();
     calculation.innerText += '-';
-    numbers.push(number);
-    operators.push('-');
-    number = '';
+    if (number !== '' && number !== '-') {
+        calArr.push(number);
+    }
+    if (calArr[calArr.length - 1] === '+' || calArr[calArr.length - 1] === '-' || calArr[calArr.length - 1] === '*' || calArr[calArr.length - 1] === '/') {
+        number += '-';
+    }
+    else {
+        calArr.push('-');
+        number = '';
+    }
 }
 const multiply = () => {
     fontRes();
     calculation.innerText += 'x';
-    numbers.push(number);
-    operators.push('*');
+    if (number !== '' && number !== '-') {
+        calArr.push(number);
+    }
+    doubleOpe();
+    calArr.push('*');
     number = '';
 }
 const divide = () => {
     fontRes();
     calculation.innerText += '/';
-    numbers.push(number);
-    operators.push('/');
+    if (number !== '' & number !== '-') {
+        calArr.push(number);
+    }
+    doubleOpe();
+    calArr.push('/');
     number = '';
 }
 
 const equals = () => {
-    numbers.push(number);
+    calArr.push(number);
+
+    for (let i=0; i<calArr.length; i++) {
+        if (calArr[i] === '+' || calArr[i] === '-' || calArr[i] === '*' || calArr[i] === '/') {    
+            operators.push(calArr[i]);
+        }
+        else {
+            numbers.push(calArr[i]);
+        }
+    }
+
     answer = parseFloat(numbers[0]);
     for (let i=0; i<operators.length; i++) {
         if(operators[i] === '+') { 
-                answer += parseFloat(numbers[i + 1]);
+            answer += parseFloat(numbers[i + 1]);
         }
         if(operators[i] === '-') {
             answer -= parseFloat(numbers[i + 1]);
@@ -165,9 +198,14 @@ const equals = () => {
         }
     }
     
+    answer = answer.toFixed(8);
+    answer = parseFloat(answer);
     answerStr = answer.toString();
     
-    if (answer > 999999999 || answer < 0.00000001) {
+    if (answer === 0) {
+        result.innerText = answer;
+    }
+    else if (answer > 999999999 || Math.abs(answer) < 0.00000001) {
         result.innerText = answer.toExponential(7);
     }
     else {
@@ -176,7 +214,7 @@ const equals = () => {
             result.innerText = parseFloat(answer);
         }
         else {
-            for (let i=0; i<answerStr.length; i++) { 
+            for (let i=0; i<14; i++) { 
                 result.innerText += answerStr[i];
             }
         } 
@@ -188,3 +226,4 @@ const equals = () => {
 console.log(numbers);
 console.log(operators);
 console.log(number);
+console.log(calArr);
