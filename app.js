@@ -128,7 +128,7 @@ const pressedDec = () => {
 const plus = () => {
     fontRes();
     calculation.innerText += '+';
-    if (number !== '' && number !== '-') {
+    if (number !== '' && number !== '-' && numbers.length === 0) {
         calArr.push(number);
     }
     doubleOpe();
@@ -138,7 +138,7 @@ const plus = () => {
 const minus = () => {
     fontRes();
     calculation.innerText += '-';
-    if (number !== '' && number !== '-') {
+    if (number !== '' && number !== '-' && numbers.length === 0) {
         calArr.push(number);
     }
     if (calArr[calArr.length - 1] === '+' || calArr[calArr.length - 1] === '-' || calArr[calArr.length - 1] === '*' || calArr[calArr.length - 1] === '/') {
@@ -152,7 +152,7 @@ const minus = () => {
 const multiply = () => {
     fontRes();
     calculation.innerText += 'x';
-    if (number !== '' && number !== '-') {
+    if (number !== '' && number !== '-' && numbers.length === 0) {
         calArr.push(number);
     }
     doubleOpe();
@@ -162,7 +162,7 @@ const multiply = () => {
 const divide = () => {
     fontRes();
     calculation.innerText += '/';
-    if (number !== '' & number !== '-') {
+    if (number !== '' & number !== '-' && numbers.length === 0) {
         calArr.push(number);
     }
     doubleOpe();
@@ -171,6 +171,9 @@ const divide = () => {
 }
 
 const equals = () => {
+    numbers = [];
+    operators = [];
+
     calArr.push(number);
 
     for (let i=0; i<calArr.length; i++) {
@@ -220,7 +223,7 @@ const equals = () => {
         } 
     }
        calculation.innerText = '';
-       calculation.style.display = 'none';
+       //calculation.style.display = 'none';
 }
 
 console.log(numbers);
