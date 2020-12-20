@@ -265,4 +265,3 @@ const equals = () => {
        calculation.style.display = 'none';
        result.style.visibility = 'visible';
 }
-
