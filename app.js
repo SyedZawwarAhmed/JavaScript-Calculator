@@ -214,7 +214,7 @@ const equals = () => {
             result.innerText = parseFloat(answer);
         }
         else {
-            for (let i=0; i<14; i++) { 
+            for (let i=0; i<15; i++) { 
                 result.innerText += answerStr[i];
             }
         } 
