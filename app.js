@@ -127,7 +127,16 @@ const pressedDec = () => {
 
 const plus = () => {
     fontRes();
-    calculation.innerText += '+';
+  
+    calculation.style.display = ''
+    if (result.innerText !== '') {
+        result.style.visibility = 'hidden';
+        calculation.innerText = calculation.innerText + result.textContent + '+';
+    }
+    else {
+        calculation.innerText += '+';
+    }
+  
     if (number !== '' && number !== '-' && numbers.length === 0) {
         calArr.push(number);
     }
@@ -136,8 +145,18 @@ const plus = () => {
     number = '';
 }
 const minus = () => {
+    calculation.style.display = ''
     fontRes();
-    calculation.innerText += '-';
+
+    calculation.style.display = ''
+    if (result.innerText !== '') {
+        result.style.visibility = 'hidden';
+        calculation.innerText = calculation.innerText + result.textContent + '-';
+    }
+    else {
+        calculation.innerText += '-';
+    }
+    
     if (number !== '' && number !== '-' && numbers.length === 0) {
         calArr.push(number);
     }
@@ -150,8 +169,18 @@ const minus = () => {
     }
 }
 const multiply = () => {
+    calculation.style.display = ''
     fontRes();
-    calculation.innerText += 'x';
+    
+    calculation.style.display = ''
+    if (result.innerText !== '') {
+        result.style.visibility = 'hidden';
+        calculation.innerText = calculation.innerText + result.textContent + 'x';
+    }
+    else {
+        calculation.innerText += 'x';
+    }
+
     if (number !== '' && number !== '-' && numbers.length === 0) {
         calArr.push(number);
     }
@@ -160,8 +189,18 @@ const multiply = () => {
     number = '';
 }
 const divide = () => {
+    calculation.style.display = ''
     fontRes();
-    calculation.innerText += '/';
+    
+    calculation.style.display = ''
+    if (result.innerText !== '') {
+        result.style.visibility = 'hidden';
+        calculation.innerText = calculation.innerText + result.textContent + '/';
+    }
+    else {
+        calculation.innerText += '/';
+    }
+
     if (number !== '' & number !== '-' && numbers.length === 0) {
         calArr.push(number);
     }
@@ -223,10 +262,7 @@ const equals = () => {
         } 
     }
        calculation.innerText = '';
-       //calculation.style.display = 'none';
+       calculation.style.display = 'none';
+       result.style.visibility = 'visible';
 }
 
-console.log(numbers);
-console.log(operators);
-console.log(number);
-console.log(calArr);
