@@ -58,6 +58,26 @@ function numClick(num) {
     number += num;
 }
 
+function opeClick(ope, sign) {
+    fontRes();
+  
+    calculation.style.display = ''
+    if (result.innerText !== '') {
+        result.style.visibility = 'hidden';
+        calculation.innerText = calculation.innerText + result.textContent + sign;
+    }
+    else {
+        calculation.innerText += sign;
+    }
+  
+    if (number !== '' && number !== '-' && numbers.length === 0) {
+        calArr.push(number);
+    }
+    doubleOpe();
+    calArr.push(ope);
+    number = '';
+}
+
 const pressedDec = () => {
     fontRes();
     let i ;
@@ -72,25 +92,6 @@ const pressedDec = () => {
     }
 }
 
-const plus = () => {
-    fontRes();
-  
-    calculation.style.display = ''
-    if (result.innerText !== '') {
-        result.style.visibility = 'hidden';
-        calculation.innerText = calculation.innerText + result.textContent + '+';
-    }
-    else {
-        calculation.innerText += '+';
-    }
-  
-    if (number !== '' && number !== '-' && numbers.length === 0) {
-        calArr.push(number);
-    }
-    doubleOpe();
-    calArr.push('+');
-    number = '';
-}
 const minus = () => {
     calculation.style.display = ''
     fontRes();
@@ -114,46 +115,6 @@ const minus = () => {
         calArr.push('-');
         number = '';
     }
-}
-const multiply = () => {
-    calculation.style.display = ''
-    fontRes();
-    
-    calculation.style.display = ''
-    if (result.innerText !== '') {
-        result.style.visibility = 'hidden';
-        calculation.innerText = calculation.innerText + result.textContent + 'x';
-    }
-    else {
-        calculation.innerText += 'x';
-    }
-
-    if (number !== '' && number !== '-' && numbers.length === 0) {
-        calArr.push(number);
-    }
-    doubleOpe();
-    calArr.push('*');
-    number = '';
-}
-const divide = () => {
-    calculation.style.display = ''
-    fontRes();
-    
-    calculation.style.display = ''
-    if (result.innerText !== '') {
-        result.style.visibility = 'hidden';
-        calculation.innerText = calculation.innerText + result.textContent + '/';
-    }
-    else {
-        calculation.innerText += '/';
-    }
-
-    if (number !== '' & number !== '-' && numbers.length === 0) {
-        calArr.push(number);
-    }
-    doubleOpe();
-    calArr.push('/');
-    number = '';
 }
 
 const equals = () => {
