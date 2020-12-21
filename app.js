@@ -211,4 +211,5 @@ const equals = () => {
        calculation.innerText = '';
        calculation.style.display = 'none';
        result.style.visibility = 'visible';
+       calculation.style.fontSize = '35px';
 }
