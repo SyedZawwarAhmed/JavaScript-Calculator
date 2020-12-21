@@ -58,36 +58,6 @@ function numClick(num) {
     number += num;
 }
 
-const pressed9 = () => {
-    numClick('9');
-}
-const pressed8 = () => {
-    numClick('8');
-}
-const pressed7 = () => {
-    numClick('7');
-}
-const pressed6 = () => {
-    numClick('6');
-}
-const pressed5 = () => {
-    numClick('5');
-}
-const pressed4 = () => {
-    numClick('4');
-}
-const pressed3 = () => {
-    numClick('3');
-}
-const pressed2 = () => {
-    numClick('2');
-}
-const pressed1 = () => {
-    numClick('1');
-}
-const pressed0 = () => {
-    numClick('0');
-}
 const pressedDec = () => {
     fontRes();
     let i ;
