@@ -171,6 +171,6 @@ const equals = () => {
        calculation.innerText = '';
        calculation.style.display = 'none';
        result.style.visibility = 'visible';
-       fonSize = parseInt(result.style.fontSize);
+       fonSize = 35;
        fontLen = result.textContent.length;
 }
