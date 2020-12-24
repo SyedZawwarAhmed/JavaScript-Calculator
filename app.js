@@ -37,11 +37,9 @@ function first0() {
 
 function fontRes() {
     fontLen++;
-    if (fonSize > 20) {
-        if (fontLen > 11) {
-            fonSize -= 2;
-            calculation.style.fontSize = fonSize.toString() + 'px';
-        }   
+    if (fonSize > 19 && fontLen > 11) {
+        fonSize -= 2;
+        calculation.style.fontSize = fonSize.toString() + 'px';  
     }
 }
 
@@ -155,7 +153,7 @@ const equals = () => {
     if (answer === 0) {
         result.innerText = answer;
     }
-    else if (answer > 999999999 || Math.abs(answer) < 0.00000001) {
+    else if (answerStr.length > 10) {
         result.innerText = answer.toExponential(7);
     }
     else {
@@ -164,13 +162,15 @@ const equals = () => {
             result.innerText = parseFloat(answer);
         }
         else {
-            for (let i=0; i<15; i++) { 
+            for (let i=0; i<answerStr.length; i++) { 
                 result.innerText += answerStr[i];
             }
         } 
-    }
+    } 
+
        calculation.innerText = '';
        calculation.style.display = 'none';
        result.style.visibility = 'visible';
-       calculation.style.fontSize = '35px';
+       fonSize = parseInt(result.style.fontSize);
+       fontLen = result.textContent.length;
 }
